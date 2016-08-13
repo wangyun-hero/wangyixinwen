@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "WYTabBarViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,8 +18,33 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    
+    //创建window
+    self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
+    
+    //设置window的背景颜色
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    //设置tabbarContorller
+    WYTabBarViewController *tab = [[WYTabBarViewController alloc]init];
+    tab.tabBar.tintColor = [UIColor redColor];
+    //设置根控制器
+    self.window.rootViewController = tab;
+    //self.window.rootViewController = [NSClassFromString(@"WYNewsListViewController") new];
+    //[NSClassFromString(@"WYTabBarViewController") new];
+    
+    //设置主窗口，并显示
+    [self.window makeKeyAndVisible];
+
     return YES;
 }
+
+//-(void)Appearance
+//{
+//   UITabBar *tabbar = [UITabBar appearance];
+//    tabbar.tintColor = [UIColor redColor];
+//}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

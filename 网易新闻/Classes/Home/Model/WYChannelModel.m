@@ -1,0 +1,31 @@
+//
+//  WYChannelModel.m
+//  网易新闻
+//
+//  Created by 王云 on 16/8/13.
+//  Copyright © 2016年 王云. All rights reserved.
+//
+
+#import "WYChannelModel.h"
+
+@implementation WYChannelModel
+
++(NSArray *)channels
+{
+   //获取json的路径
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"topic_news.json" ofType:nil];
+    //将其转化为字典
+    NSData *data = [NSData dataWithContentsOfFile:path];
+    NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
+    //字典转模型
+    NSArray *result = [NSArray yy_modelArrayWithClass:[self class] json:dict[@"tList"]];
+//    result = [result sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+//        <#code#>
+//    }];
+    
+    return  result;
+    
+    
+}
+
+@end
