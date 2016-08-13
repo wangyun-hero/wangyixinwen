@@ -34,6 +34,7 @@
 		CBFBA41A1D5F380B002C02AF /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA40F1D5F380B002C02AF /* UIImage+Blur.m */; };
 		CBFBA41B1D5F380B002C02AF /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA4111D5F380B002C02AF /* UILabel+Addition.m */; };
 		CBFBA41C1D5F380B002C02AF /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA4131D5F380B002C02AF /* UIView+Addition.m */; };
+		CBFBA41F1D5F5BE2002C02AF /* WYChannelLable.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA41E1D5F5BE2002C02AF /* WYChannelLable.m */; };
 		F57DC662BD69652A7557127C /* libPods-网易新闻.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBE6647DBF687201277A05F /* libPods-网易新闻.a */; };
 /* End PBXBuildFile section */
 
@@ -90,6 +91,8 @@
 		CBFBA4111D5F380B002C02AF /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Addition.m"; sourceTree = "<group>"; };
 		CBFBA4121D5F380B002C02AF /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
 		CBFBA4131D5F380B002C02AF /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
+		CBFBA41D1D5F5BE2002C02AF /* WYChannelLable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYChannelLable.h; sourceTree = "<group>"; };
+		CBFBA41E1D5F5BE2002C02AF /* WYChannelLable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYChannelLable.m; sourceTree = "<group>"; };
 		EFBE6647DBF687201277A05F /* libPods-网易新闻.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-网易新闻.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -219,6 +222,8 @@
 				CBC3C67A1D5E2D890031D033 /* WYChannelView.h */,
 				CBC3C67B1D5E2D890031D033 /* WYChannelView.m */,
 				CBC3C67D1D5E2DA00031D033 /* WYChannelView.xib */,
+				CBFBA41D1D5F5BE2002C02AF /* WYChannelLable.h */,
+				CBFBA41E1D5F5BE2002C02AF /* WYChannelLable.m */,
 			);
 			name = View;
 			path = ../View;
@@ -416,6 +421,7 @@
 				CBFBA41C1D5F380B002C02AF /* UIView+Addition.m in Sources */,
 				CBC3C6791D5E2B840031D033 /* WYHomeViewController.m in Sources */,
 				CBC3C6611D5D9E4F0031D033 /* WYNetWorkManager.m in Sources */,
+				CBFBA41F1D5F5BE2002C02AF /* WYChannelLable.m in Sources */,
 				CBC3C65C1D5D93780031D033 /* WYNewsListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

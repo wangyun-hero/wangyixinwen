@@ -18,7 +18,7 @@
                         <constraint firstAttribute="width" constant="18" id="O1a-zg-1jt"/>
                     </constraints>
                 </imageView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gh6-FL-CUT">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gh6-FL-CUT">
                     <rect key="frame" x="0.0" y="0.0" width="252" height="35"/>
                 </scrollView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="navbar_left_more" translatesAutoresizingMaskIntoConstraints="NO" id="xgf-T6-Woj">
@@ -48,6 +48,9 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="scrollview" destination="Gh6-FL-CUT" id="WUD-Tj-qth"/>
+            </connections>
             <point key="canvasLocation" x="175" y="284.5"/>
         </view>
     </objects>

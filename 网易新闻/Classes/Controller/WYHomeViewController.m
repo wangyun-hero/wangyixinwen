@@ -20,7 +20,7 @@
     [super viewDidLoad];
     
     [self setupUI];
-    [WYChannelModel channels];
+    //[WYChannelModel channels];
 }
 
 -(void)setupUI
@@ -29,6 +29,8 @@
     WYChannelView *channelView = [WYChannelView channelView];
     //添加到view上
      [self.view addSubview:channelView];
+    //将模型加载的数据传递到channelview里面
+    channelView.channels = [WYChannelModel channels];
     //设置自动布局
     [channelView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);

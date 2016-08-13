@@ -24,7 +24,7 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     
     //设置window的背景颜色
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor blueColor];
     
     //设置tabbarContorller
     WYTabBarViewController *tab = [[WYTabBarViewController alloc]init];
