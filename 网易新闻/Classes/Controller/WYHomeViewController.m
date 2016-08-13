@@ -143,7 +143,7 @@ static NSString *collectioncellid = @"collectioncellid";
 {
     UIViewController *vc = [self.vcCache objectForKey:model.tid];
     if (vc == nil) {
-        vc = [[WYNewsListViewController alloc] init];
+        vc = [[WYNewsListViewController alloc]initWithModel:model];
     }
     [self.vcCache setObject:vc forKey:model.tid];
     return vc;

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class WYChannelModel;
 @interface WYNewsListViewController : UIViewController
-
+-(instancetype)initWithModel:(WYChannelModel *)model;
 @end

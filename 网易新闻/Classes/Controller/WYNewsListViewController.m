@@ -14,6 +14,7 @@
 #import <UIImageView+WebCache.h>
 
 #import "WYNewsBaseCell.h"
+#import "WYChannelModel.h"
 
 static NSString *noemalID = @"noemalID";
 // 多图的可重用id
@@ -27,9 +28,20 @@ static NSString *bigImageCellid = @"bigImageCellid";
 
 @property(nonatomic,strong) UITableView *tableView;
 
+@property(nonatomic,strong) WYChannelModel *model;
+
 @end
 
 @implementation WYNewsListViewController
+//记录传进来的model
+-(instancetype)initWithModel:(WYChannelModel *)model
+{
+    if (self = [super init]) {
+        self.model = model;
+    }
+    return self;
+}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -68,8 +80,8 @@ static NSString *bigImageCellid = @"bigImageCellid";
 #pragma mark -获取网络数据
 -(void)loadData
 {
-    //频道号
-    NSString *tid = @"T1348649079062";
+    //频道号,加载对应频道的数据
+    NSString *tid = self.model.tid;
     //根据频道获取数据
     [[WYNetWorkManager shardManager] getHomeNewListWithChannelld:tid completion:^(id response, NSError *error) {
         NSLog(@"%@",response);
