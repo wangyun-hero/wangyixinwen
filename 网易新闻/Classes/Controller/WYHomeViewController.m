@@ -8,6 +8,7 @@
 
 #import "WYHomeViewController.h"
 #import "WYChannelView.h"
+#import "WYChannelModel.h"
 
 @interface WYHomeViewController ()
 
@@ -19,13 +20,16 @@
     [super viewDidLoad];
     
     [self setupUI];
-    // Do any additional setup after loading the view.
+    [WYChannelModel channels];
 }
 
 -(void)setupUI
 {
+    //添加频道的view
     WYChannelView *channelView = [WYChannelView channelView];
+    //添加到view上
      [self.view addSubview:channelView];
+    //设置自动布局
     [channelView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.offset(0);
         make.height.mas_equalTo(35);

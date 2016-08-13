@@ -25,6 +25,15 @@
 		CBC3C67E1D5E2DA00031D033 /* WYChannelView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CBC3C67D1D5E2DA00031D033 /* WYChannelView.xib */; };
 		CBC3C6811D5EADD80031D033 /* WYChannelModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CBC3C6801D5EADD80031D033 /* WYChannelModel.m */; };
 		CBC3C6831D5EAE8A0031D033 /* topic_news.json in Resources */ = {isa = PBXBuildFile; fileRef = CBC3C6821D5EAE8A0031D033 /* topic_news.json */; };
+		CBFBA4141D5F380B002C02AF /* NSArray+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA4031D5F380B002C02AF /* NSArray+Addition.m */; };
+		CBFBA4151D5F380B002C02AF /* NSAttributedString+Additon.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA4051D5F380B002C02AF /* NSAttributedString+Additon.m */; };
+		CBFBA4161D5F380B002C02AF /* NSObject+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA4071D5F380B002C02AF /* NSObject+Addition.m */; };
+		CBFBA4171D5F380B002C02AF /* NSObject+Formula.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA4091D5F380B002C02AF /* NSObject+Formula.m */; };
+		CBFBA4181D5F380B002C02AF /* UIColor+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA40B1D5F380B002C02AF /* UIColor+Addition.m */; };
+		CBFBA4191D5F380B002C02AF /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA40D1D5F380B002C02AF /* UIImage+Additions.m */; };
+		CBFBA41A1D5F380B002C02AF /* UIImage+Blur.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA40F1D5F380B002C02AF /* UIImage+Blur.m */; };
+		CBFBA41B1D5F380B002C02AF /* UILabel+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA4111D5F380B002C02AF /* UILabel+Addition.m */; };
+		CBFBA41C1D5F380B002C02AF /* UIView+Addition.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFBA4131D5F380B002C02AF /* UIView+Addition.m */; };
 		F57DC662BD69652A7557127C /* libPods-网易新闻.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EFBE6647DBF687201277A05F /* libPods-网易新闻.a */; };
 /* End PBXBuildFile section */
 
@@ -62,6 +71,25 @@
 		CBC3C67F1D5EADD80031D033 /* WYChannelModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WYChannelModel.h; sourceTree = "<group>"; };
 		CBC3C6801D5EADD80031D033 /* WYChannelModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WYChannelModel.m; sourceTree = "<group>"; };
 		CBC3C6821D5EAE8A0031D033 /* topic_news.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = topic_news.json; sourceTree = "<group>"; };
+		CBFBA4011D5F380B002C02AF /* Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Addition.h; sourceTree = "<group>"; };
+		CBFBA4021D5F380B002C02AF /* NSArray+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Addition.h"; sourceTree = "<group>"; };
+		CBFBA4031D5F380B002C02AF /* NSArray+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Addition.m"; sourceTree = "<group>"; };
+		CBFBA4041D5F380B002C02AF /* NSAttributedString+Additon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Additon.h"; sourceTree = "<group>"; };
+		CBFBA4051D5F380B002C02AF /* NSAttributedString+Additon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Additon.m"; sourceTree = "<group>"; };
+		CBFBA4061D5F380B002C02AF /* NSObject+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Addition.h"; sourceTree = "<group>"; };
+		CBFBA4071D5F380B002C02AF /* NSObject+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Addition.m"; sourceTree = "<group>"; };
+		CBFBA4081D5F380B002C02AF /* NSObject+Formula.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Formula.h"; sourceTree = "<group>"; };
+		CBFBA4091D5F380B002C02AF /* NSObject+Formula.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Formula.m"; sourceTree = "<group>"; };
+		CBFBA40A1D5F380B002C02AF /* UIColor+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Addition.h"; sourceTree = "<group>"; };
+		CBFBA40B1D5F380B002C02AF /* UIColor+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Addition.m"; sourceTree = "<group>"; };
+		CBFBA40C1D5F380B002C02AF /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Additions.h"; sourceTree = "<group>"; };
+		CBFBA40D1D5F380B002C02AF /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Additions.m"; sourceTree = "<group>"; };
+		CBFBA40E1D5F380B002C02AF /* UIImage+Blur.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Blur.h"; sourceTree = "<group>"; };
+		CBFBA40F1D5F380B002C02AF /* UIImage+Blur.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Blur.m"; sourceTree = "<group>"; };
+		CBFBA4101D5F380B002C02AF /* UILabel+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Addition.h"; sourceTree = "<group>"; };
+		CBFBA4111D5F380B002C02AF /* UILabel+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Addition.m"; sourceTree = "<group>"; };
+		CBFBA4121D5F380B002C02AF /* UIView+Addition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Addition.h"; sourceTree = "<group>"; };
+		CBFBA4131D5F380B002C02AF /* UIView+Addition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Addition.m"; sourceTree = "<group>"; };
 		EFBE6647DBF687201277A05F /* libPods-网易新闻.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-网易新闻.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -210,10 +238,37 @@
 		CBC3C65E1D5D9DF40031D033 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				CBFBA4001D5F380B002C02AF /* Additions */,
 				CBC3C65F1D5D9E4F0031D033 /* WYNetWorkManager.h */,
 				CBC3C6601D5D9E4F0031D033 /* WYNetWorkManager.m */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		CBFBA4001D5F380B002C02AF /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				CBFBA4011D5F380B002C02AF /* Addition.h */,
+				CBFBA4021D5F380B002C02AF /* NSArray+Addition.h */,
+				CBFBA4031D5F380B002C02AF /* NSArray+Addition.m */,
+				CBFBA4041D5F380B002C02AF /* NSAttributedString+Additon.h */,
+				CBFBA4051D5F380B002C02AF /* NSAttributedString+Additon.m */,
+				CBFBA4061D5F380B002C02AF /* NSObject+Addition.h */,
+				CBFBA4071D5F380B002C02AF /* NSObject+Addition.m */,
+				CBFBA4081D5F380B002C02AF /* NSObject+Formula.h */,
+				CBFBA4091D5F380B002C02AF /* NSObject+Formula.m */,
+				CBFBA40A1D5F380B002C02AF /* UIColor+Addition.h */,
+				CBFBA40B1D5F380B002C02AF /* UIColor+Addition.m */,
+				CBFBA40C1D5F380B002C02AF /* UIImage+Additions.h */,
+				CBFBA40D1D5F380B002C02AF /* UIImage+Additions.m */,
+				CBFBA40E1D5F380B002C02AF /* UIImage+Blur.h */,
+				CBFBA40F1D5F380B002C02AF /* UIImage+Blur.m */,
+				CBFBA4101D5F380B002C02AF /* UILabel+Addition.h */,
+				CBFBA4111D5F380B002C02AF /* UILabel+Addition.m */,
+				CBFBA4121D5F380B002C02AF /* UIView+Addition.h */,
+				CBFBA4131D5F380B002C02AF /* UIView+Addition.m */,
+			);
+			path = Additions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,14 +397,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CBFBA41A1D5F380B002C02AF /* UIImage+Blur.m in Sources */,
 				CBC3C67C1D5E2D890031D033 /* WYChannelView.m in Sources */,
+				CBFBA4181D5F380B002C02AF /* UIColor+Addition.m in Sources */,
 				CBC3C5C51D5C26AD0031D033 /* ViewController.m in Sources */,
+				CBFBA4191D5F380B002C02AF /* UIImage+Additions.m in Sources */,
 				CBC3C5C21D5C26AD0031D033 /* AppDelegate.m in Sources */,
 				CBC3C5D91D5C284C0031D033 /* WYTabBarViewController.m in Sources */,
+				CBFBA41B1D5F380B002C02AF /* UILabel+Addition.m in Sources */,
 				CBC3C6741D5E165D0031D033 /* WYNewsBaseCell.m in Sources */,
 				CBC3C6641D5DA6290031D033 /* WYNewsModel.m in Sources */,
 				CBC3C5BF1D5C26AD0031D033 /* main.m in Sources */,
+				CBFBA4171D5F380B002C02AF /* NSObject+Formula.m in Sources */,
+				CBFBA4151D5F380B002C02AF /* NSAttributedString+Additon.m in Sources */,
 				CBC3C6811D5EADD80031D033 /* WYChannelModel.m in Sources */,
+				CBFBA4161D5F380B002C02AF /* NSObject+Addition.m in Sources */,
+				CBFBA4141D5F380B002C02AF /* NSArray+Addition.m in Sources */,
+				CBFBA41C1D5F380B002C02AF /* UIView+Addition.m in Sources */,
 				CBC3C6791D5E2B840031D033 /* WYHomeViewController.m in Sources */,
 				CBC3C6611D5D9E4F0031D033 /* WYNetWorkManager.m in Sources */,
 				CBC3C65C1D5D93780031D033 /* WYNewsListViewController.m in Sources */,

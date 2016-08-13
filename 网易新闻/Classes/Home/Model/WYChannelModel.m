@@ -19,13 +19,13 @@
     NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
     //字典转模型
     NSArray *result = [NSArray yy_modelArrayWithClass:[self class] json:dict[@"tList"]];
-//    result = [result sortedArrayUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
-//        <#code#>
-//    }];
-    
+    //做一个排序,因为channel是根据id来的,而字典本身就是无序的
+    result = [result sortedArrayUsingComparator:^NSComparisonResult( WYChannelModel* obj1, WYChannelModel* obj2) {
+        return [obj1.tid compare:obj2.tid];
+    }];
+    //经过排序的模型数组
     return  result;
-    
-    
+
 }
 
 @end
