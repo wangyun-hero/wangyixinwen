@@ -12,7 +12,7 @@
 #import "WYNewsListViewController.h"
 
 static NSString *collectioncellid = @"collectioncellid";
-@interface WYHomeViewController ()<UICollectionViewDataSource>
+@interface WYHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
 //频道视图
 @property(nonatomic,strong) WYChannelView *channelView;
 //显示新闻的collectionView
@@ -74,8 +74,9 @@ static NSString *collectioncellid = @"collectioncellid";
     collectionView.backgroundColor = [UIColor whiteColor];
     //设置分页
     collectionView.pagingEnabled = YES;
-    //设置数据源
+    //设置数据源和代理
     collectionView.dataSource = self;
+    collectionView.delegate = self;
     //注册cell
     [collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:collectioncellid];
     
@@ -101,7 +102,20 @@ static NSString *collectioncellid = @"collectioncellid";
     
 }
 
-
+#pragma mark -代理
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    NSLog(@"%@",NSStringFromCGPoint(self.collectionView.contentOffset));
+    CGFloat ratio = self.collectionView.contentOffset.x / self.collectionView.bounds.size.width;
+    NSLog(@"%f",ratio);
+    //取到当前页面的索引
+    NSInteger curruntIndex = ratio / 1;
+    NSLog(@"%zd",curruntIndex);
+    //根据滚动的距离求出缩放的比例
+    CGFloat scale = ratio - curruntIndex;
+    
+    
+}
 
 
 #pragma mark -数据源
