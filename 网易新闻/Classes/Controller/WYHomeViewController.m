@@ -9,15 +9,19 @@
 #import "WYHomeViewController.h"
 #import "WYChannelView.h"
 #import "WYChannelModel.h"
+#import "WYNewsListViewController.h"
 
 static NSString *collectioncellid = @"collectioncellid";
 @interface WYHomeViewController ()<UICollectionViewDataSource>
-
+//频道视图
 @property(nonatomic,strong) WYChannelView *channelView;
-
+//显示新闻的collectionView
 @property(nonatomic,strong) UICollectionView *collectionView;
-
+//记录频道的数据
 @property(nonatomic,strong) NSArray *channels;
+//缓存控制器的字典
+@property(nonatomic,strong) NSMutableDictionary *vcCache;
+
 
 @end
 
@@ -110,13 +114,49 @@ static NSString *collectioncellid = @"collectioncellid";
 {
     //取缓存池找
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectioncellid forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor randomColor];
+    //方法一  移除cell中的contentView的子控件
+    for (UIView *v in cell.contentView.subviews) {
+        [v removeFromSuperview];
+    }
+    //方法二 使他的元素执行某个方法
+    [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
+    //取到对应cell的模型
+    WYChannelModel *model = [self.channels objectAtIndex:indexPath.item];
     
+    // 将新闻列表控制器的 view 添加到cell的contentView里面
+    UIViewController *vc = [self viewControllerWithModel:model];
+   //设置为当前控制器的子控制器
+    [self addChildViewController:vc];
+    //将vc.view添加到cell上
+    [cell.contentView addSubview:vc.view];
+    cell.backgroundColor = [UIColor randomColor];
+    //设置控制器的view和cell一样大
+    [vc.view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.edges.equalTo(cell.contentView);
+    }];
     
     return  cell;
 }
 
 
+-(UIViewController *)viewControllerWithModel:(WYChannelModel *)model
+{
+    UIViewController *vc = [self.vcCache objectForKey:model.tid];
+    if (vc == nil) {
+        vc = [[WYNewsListViewController alloc] init];
+    }
+    [self.vcCache setObject:vc forKey:model.tid];
+    return vc;
+}
+
+#pragma mark -vcCache的懒加载
+-(NSMutableDictionary *)vcCache
+{
+    if (_vcCache == nil) {
+        _vcCache = [NSMutableDictionary dictionary];
+    }
+    return _vcCache;
+}
 
 
 
