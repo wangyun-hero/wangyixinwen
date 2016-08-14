@@ -180,11 +180,11 @@
 		CBC3C5D51D5C28240031D033 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				CBC3C65E1D5D9DF40031D033 /* Tools */,
-				CBC3C6581D5D93090031D033 /* View */,
 				CBC3C6591D5D93420031D033 /* Model */,
+				CBC3C6581D5D93090031D033 /* View */,
 				CBC3C6571D5D93090031D033 /* Controller */,
 				CBC3C5D61D5C28240031D033 /* Main */,
+				CBC3C65E1D5D9DF40031D033 /* Tools */,
 			);
 			path = Home;
 			sourceTree = "<group>";

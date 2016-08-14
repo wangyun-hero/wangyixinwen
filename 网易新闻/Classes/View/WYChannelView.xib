@@ -25,9 +25,9 @@
                     <rect key="frame" x="0.0" y="0.0" width="45" height="35"/>
                 </imageView>
                 <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="navbar_right_more" translatesAutoresizingMaskIntoConstraints="NO" id="AJ8-v5-JHV">
-                    <rect key="frame" x="222" y="0.0" width="30" height="35"/>
+                    <rect key="frame" x="217" y="0.0" width="35" height="35"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="30" id="oNc-Jh-B1Y"/>
+                        <constraint firstAttribute="width" constant="35" id="oNc-Jh-B1Y"/>
                     </constraints>
                 </imageView>
             </subviews>

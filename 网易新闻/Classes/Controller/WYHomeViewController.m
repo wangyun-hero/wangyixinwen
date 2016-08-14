@@ -106,14 +106,18 @@ static NSString *collectioncellid = @"collectioncellid";
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     NSLog(@"%@",NSStringFromCGPoint(self.collectionView.contentOffset));
-    CGFloat ratio = self.collectionView.contentOffset.x / self.collectionView.bounds.size.width;
+    CGFloat ratio = self.collectionView.contentOffset.x / self.collectionView.frame.size.width;
     NSLog(@"%f",ratio);
     //取到当前页面的索引
     NSInteger curruntIndex = ratio / 1;
     NSLog(@"%zd",curruntIndex);
     //根据滚动的距离求出缩放的比例
-    CGFloat scale = ratio - curruntIndex;
     
+        
+        CGFloat scale = ratio - curruntIndex;
+    NSLog(@"%f",scale);
+        [self.channelView setScale: scale withIndex:curruntIndex + 1];
+        [self.channelView setScale: 1- scale withIndex:curruntIndex];
     
 }
 
@@ -129,9 +133,9 @@ static NSString *collectioncellid = @"collectioncellid";
     //取缓存池找
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:collectioncellid forIndexPath:indexPath];
     //方法一  移除cell中的contentView的子控件
-    for (UIView *v in cell.contentView.subviews) {
-        [v removeFromSuperview];
-    }
+//    for (UIView *v in cell.contentView.subviews) {
+//        [v removeFromSuperview];
+//    }
     //方法二 使他的元素执行某个方法
     [cell.contentView.subviews makeObjectsPerformSelector:@selector(removeFromSuperview)];
     //取到对应cell的模型

@@ -14,4 +14,5 @@
 
 +(instancetype)channelView;
 
+-(void)setScale:(CGFloat)scale withIndex:(NSInteger)index;
 @end

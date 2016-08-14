@@ -9,6 +9,7 @@
 #import "WYChannelLable.h"
 #import "WYChannelModel.h"
 #import "WYChannelView.h"
+#import "Masonry.h"
 @interface WYChannelView ()
 @property(weak, nonatomic) IBOutlet UIScrollView *scrollview;
 
@@ -21,7 +22,7 @@
                                       options:nil] lastObject];
 }
 
-#pragma mark -关于lable
+#pragma mark -关于lable的布局
 - (void)setChannels:(NSArray *)channels {
   _channels = channels;
 
@@ -44,11 +45,27 @@
     x += lable.frame.size.width + margin;
 
     //自动适应大小
-    [lable sizeToFit];
+   // [lable sizeToFit];
+//      [lable mas_makeConstraints:^(MASConstraintMaker *make) {
+//          make.centerY.equalTo(self.scrollview);
+//      }];
   }
 
   //设置scrollview的滚动距离,此时循环结束,x就是最终的宽
   self.scrollview.contentSize = CGSizeMake(x, 0);
+    
+    [self setScale:1 withIndex:0];
+}
+
+#pragma mark -lable的缩放
+-(void)setScale:(CGFloat)scale withIndex:(NSInteger)index
+{
+    //取到对应位置的lable
+    UILabel *lable = [self.scrollview.subviews objectAtIndex:index];
+    //设置对应位置lable的缩放
+    [lable setTextColor:[UIColor colorWithRed:scale green:0 blue:0 alpha:1]];
+    
+    
 }
 
 @end
