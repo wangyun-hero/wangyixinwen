@@ -12,7 +12,7 @@
 #import "WYNewsListViewController.h"
 
 static NSString *collectioncellid = @"collectioncellid";
-@interface WYHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate>
+@interface WYHomeViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,WYChannelViewDelegata>
 //频道视图
 @property(nonatomic,strong) WYChannelView *channelView;
 //显示新闻的collectionView
@@ -41,6 +41,8 @@ static NSString *collectioncellid = @"collectioncellid";
     WYChannelView *channelView = [WYChannelView channelView];
     //添加到view上
      [self.view addSubview:channelView];
+    // 6 设置传递事件的代理属性为vc
+    channelView.delagata = self;
     //记录channelview
     self.channelView = channelView;
     //将模型加载的数据传递到vc
@@ -102,7 +104,20 @@ static NSString *collectioncellid = @"collectioncellid";
     
 }
 
-#pragma mark -代理
+#pragma mark -传递cell被点击的事件的代理方法
+-(void)channelView:(WYChannelView *)channelView clickWithIndex:(NSInteger)index
+{
+    NSLog(@"点击了%zd",index);
+    //取到位置
+    NSIndexPath *indexPath = [NSIndexPath indexPathForItem:index inSection:0];
+    //让scrollview滚动到对应的位置
+    [self.collectionView scrollToItemAtIndexPath:indexPath atScrollPosition:UICollectionViewScrollPositionLeft animated:false];
+    
+    
+}
+
+
+#pragma mark -scrollView代理
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     NSLog(@"%@",NSStringFromCGPoint(self.collectionView.contentOffset));
@@ -116,9 +131,10 @@ static NSString *collectioncellid = @"collectioncellid";
         
         CGFloat scale = ratio - curruntIndex;
     NSLog(@"%f",scale);
+    if (curruntIndex + 1 < self.channels.count) {
         [self.channelView setScale: scale withIndex:curruntIndex + 1];
         [self.channelView setScale: 1- scale withIndex:curruntIndex];
-    
+    }
 }
 
 

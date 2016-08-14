@@ -12,4 +12,6 @@
 
 +(instancetype)lableWithModel:(WYChannelModel *)model;
 
+@property(nonatomic,assign) CGFloat scale;
+
 @end

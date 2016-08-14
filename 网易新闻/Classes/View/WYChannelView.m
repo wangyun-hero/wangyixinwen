@@ -43,7 +43,13 @@
     [self.scrollview addSubview:lable];
     //将x递增
     x += lable.frame.size.width + margin;
-
+      //添加一个手势
+      UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapGesture:)];
+      //给Lable添加手势
+      [lable addGestureRecognizer:tap];
+      //开启用户交互
+      lable.userInteractionEnabled = YES;
+      
     //自动适应大小
    // [lable sizeToFit];
 //      [lable mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -57,14 +63,43 @@
     [self setScale:1 withIndex:0];
 }
 
+#pragma mark -手势的监听事件
+-(void)tapGesture:(UITapGestureRecognizer *)tap
+{
+    // 4 判断代理属性是否响应,如果响应,就执行代理方法
+    // tap.view就能取到点击的Lable
+    if ([self.delagata respondsToSelector:@selector(channelView:clickWithIndex:)]) {
+        // 5 属性执行代理方法
+        [self.delagata channelView:self clickWithIndex:[self.scrollview.subviews indexOfObject:tap.view]];
+    }
+    for (WYChannelLable *lable in self.scrollview.subviews)
+    {
+        if (tap.view == lable) {
+            lable.scale = 1;
+        }
+        else
+        {
+            lable.scale = 0;
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+}
+
 #pragma mark -lable的缩放
 -(void)setScale:(CGFloat)scale withIndex:(NSInteger)index
 {
     //取到对应位置的lable
-    UILabel *lable = [self.scrollview.subviews objectAtIndex:index];
+    WYChannelLable *lable = [self.scrollview.subviews objectAtIndex:index];
     //设置对应位置lable的缩放
-    [lable setTextColor:[UIColor colorWithRed:scale green:0 blue:0 alpha:1]];
-    
+    //[lable setTextColor:[UIColor colorWithRed:scale green:0 blue:0 alpha:1]];
+    lable.scale = scale;
     
 }
 

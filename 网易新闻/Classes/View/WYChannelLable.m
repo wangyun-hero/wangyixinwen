@@ -23,4 +23,23 @@
     return  lable;
     
 }
+
+-(void)setScale:(CGFloat)scale
+{
+    _scale = scale;
+    //计算缩放比例
+    [self setTextColor:[UIColor colorWithRed:scale green:0 blue:0 alpha:1]];
+    // 3. 变大变小
+    // 14 --> 0
+    // 18 --> 1
+    // 假如说: 传入的scale是0.5
+    // sc --> 16
+    // 16 / 14 == 1.xxx
+    CGFloat sc = 14 + (18 - 14) * scale;
+    self.transform = CGAffineTransformMakeScale(sc / 14, sc / 14);
+
+    
+    
+    
+}
 @end
