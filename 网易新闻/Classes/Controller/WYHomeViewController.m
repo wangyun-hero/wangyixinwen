@@ -21,7 +21,8 @@ static NSString *collectioncellid = @"collectioncellid";
 @property(nonatomic,strong) NSArray *channels;
 //缓存控制器的字典
 @property(nonatomic,strong) NSMutableDictionary *vcCache;
-
+//记录adview
+@property(nonatomic,strong) UIView *adView;
 
 @end
 
@@ -31,7 +32,47 @@ static NSString *collectioncellid = @"collectioncellid";
     [super viewDidLoad];
     
     [self setupUI];
-    //[WYChannelModel channels];
+    [WYChannelModel channels];
+   //添加一个边缘手势
+    UIScreenEdgePanGestureRecognizer *edgePan = [[UIScreenEdgePanGestureRecognizer alloc]initWithTarget:self action:@selector(showAd:)];
+    //指定滑动的方向
+    edgePan.edges = MASAttributeLeft;
+    //
+    [self.collectionView.panGestureRecognizer requireGestureRecognizerToFail:edgePan];
+    //添加手势
+    [self.view addGestureRecognizer:edgePan];
+
+
+}
+
+-(void)showAd:(UIScreenEdgePanGestureRecognizer *)ges
+{
+    //手指的位置
+    CGPoint p = [ges locationInView:self.view];
+    CGRect frame = self.adView.frame;
+    //改变x的frame
+    frame.origin.x = p.x - [UIScreen mainScreen].bounds.size.width;
+    //重新设置上去
+    self.adView.frame = frame;
+    //当手势停止或者取消的时候,将adview完全展示出来
+    if (ges.state == UIGestureRecognizerStateCancelled || ges.state == UIGestureRecognizerStateEnded)
+    {
+        //判断如果adview的中心出现在屏幕上,那么完全展示
+        if (CGRectContainsPoint(self.view.frame, self.adView.center)) {
+            frame.origin.x = 0;
+        }
+        else
+        {
+            //如果没有就隐藏
+            frame.origin.x = -[UIScreen mainScreen].bounds.size.width;
+        }
+        [UIView animateWithDuration:0.25 animations:^{
+                    //将修改后 的frame赋值重新赋值
+                    self.adView.frame = frame;
+
+        }];
+    }
+    
 }
 
 #pragma mark -关于channelView
@@ -56,6 +97,43 @@ static NSString *collectioncellid = @"collectioncellid";
         make.top.equalTo(self.mas_topLayoutGuideBottom);
     }];
     [self setupCollectionView];
+    [self setupAdView];
+}
+
+#pragma mark -setupAdView
+-(void )setupAdView
+{
+    //初始化adView
+    UIView *adView = [[UIView alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    //记录adview
+    self.adView = adView;
+    //设置颜色
+    adView.backgroundColor = [UIColor orangeColor];
+    //大小
+    CGRect frame = adView.frame;
+    //因为这个adview是盖在所以view的上面,所以添加到window上
+    frame.origin.x = -adView.frame.size.width;
+    //将修改后的frame重新赋值给adview的frame
+    adView.frame = frame;
+    //添加到window上
+    [[UIApplication sharedApplication].keyWindow addSubview:adView];
+    
+    //添加轻扫的手势
+    UISwipeGestureRecognizer *swipe = [[UISwipeGestureRecognizer alloc]initWithTarget:self action:@selector(closeAd:)];
+    swipe.direction = UISwipeGestureRecognizerDirectionLeft;
+    [self.adView addGestureRecognizer:swipe];
+    
+}
+
+#pragma mark -关闭adview
+-(void)closeAd:(UISwipeGestureRecognizer *)ges
+{
+    [UIView animateWithDuration:0.25 animations:^{
+        CGRect frame = self.adView.frame;
+        frame.origin.x = -[UIScreen mainScreen].bounds.size.width;
+        self.adView.frame = frame;
+    }];
+    
 }
 
 #pragma mark -collectionview
