@@ -117,7 +117,7 @@ static NSString *collectioncellid = @"collectioncellid";
 }
 
 
-#pragma mark -scrollView代理
+#pragma mark -UICollectionViewDelegate
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     NSLog(@"%@",NSStringFromCGPoint(self.collectionView.contentOffset));

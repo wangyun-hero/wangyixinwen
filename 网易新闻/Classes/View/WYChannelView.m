@@ -72,6 +72,7 @@
         // 5 属性执行代理方法
         [self.delagata channelView:self clickWithIndex:[self.scrollview.subviews indexOfObject:tap.view]];
     }
+    //如果我们点击的cell是某个cell的话,就放大,否则就是14号字体
     for (WYChannelLable *lable in self.scrollview.subviews)
     {
         if (tap.view == lable) {
@@ -83,14 +84,7 @@
         }
     }
     
-    
-    
-    
-    
-    
-    
-    
-}
+ }
 
 #pragma mark -lable的缩放
 -(void)setScale:(CGFloat)scale withIndex:(NSInteger)index
@@ -100,7 +94,26 @@
     //设置对应位置lable的缩放
     //[lable setTextColor:[UIColor colorWithRed:scale green:0 blue:0 alpha:1]];
     lable.scale = scale;
+   if (scale == 1)
+   {
+       //滚动的距离 = label的中心点x - 当前scrollView的宽度的一半
+       CGFloat offsetX = lable.center.x - self.scrollview.bounds.size.width * 0.5;
+       //最小偏移量
+       CGFloat minoffset = 0;
+       //最大偏移量
+       CGFloat maxoffset = self.scrollview.contentSize.width - self.scrollview.bounds.size.width;
+       if (offsetX < minoffset)
+       {
+           offsetX = 0;
+       }
+       else if (offsetX > maxoffset)
+       {
+           offsetX = maxoffset;
+       }
     
+    [self.scrollview setContentOffset:CGPointMake(offsetX, 0) animated:true];
+    
+   }
 }
 
 @end
