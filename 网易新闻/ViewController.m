@@ -19,8 +19,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     NSLog(@"cesssssssssss");
     NSLog(@"ddddddddddddd");
-    
-    
+    NSLog(@"ddddddddddddd");
     
 }
 
